@@ -10,12 +10,12 @@ import java.util.Date;
 public class Program {
     public static void main(String[] agrs){
 
-        Department obj = new Department(1, "Books");
-        System.out.println(obj);
-        Seller seller = new Seller(21, "bob", "bob@gmail.com", new Date(), 3000.0, obj);
-        System.out.println(seller);
+        //problema com conexão em banco de dados, pegar a dburl.
         SellerDao sellerDao = DaoFactory.createSellerDao();
-        System.out.println(sellerDao);
+        System.out.println("== TEST 1: seller findById ===");
+
+        Seller seller = sellerDao.findById(3);
+        System.out.println(seller);
     }
 
 
